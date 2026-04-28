@@ -1,0 +1,49 @@
+# macOS / editor files
+.DS_Store
+**/.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+env/
+.venv/
+venv/
+
+# Local model weights and training artifacts
+*.pt
+*.pth
+*.onnxs
+runs/
+
+# Large/source video data
+data/raw/
+data/mp4/
+
+# Generated YOLO training dataset
+data/yolo_dataset/
+
+# Generated annotation exports
+data/annotations/
+
+# Generated outputs
+outputs/detections/
+outputs/tracks/
+outputs/videos/
+
+# Keep metrics/slide graphics trackable, but ignore accidental heavy media there.
+outputs/metrics/**/*.mp4
+outputs/metrics/**/*.mov
+outputs/metrics/**/*.avi
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp

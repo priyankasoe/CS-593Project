@@ -1,0 +1,11 @@
+confidence_threshold,video_id,precision_pct,recall_pct,f1_pct,mean_iou_pct,true_positives,false_positives,false_negatives
+0.25,random_sim_5bot_dark,55.29,52.15,53.67,65.71,4357,3523,3998
+0.25,random_sim_6bot_naturallight_occlusion3,84.97,89.46,87.16,75.45,1605,284,189
+0.25,random_sim_6bot_naturallight_occlusion4,88.57,91.2,89.86,72.08,1658,214,160
+0.25,straight_line_6bots,97.83,100.0,98.9,78.94,858,19,0
+0.25,TOTAL,67.73,66.11,66.91,70.14,8478,4040,4347
+0.35,random_sim_5bot_dark,55.69,49.73,52.54,65.94,4155,3306,4200
+0.35,random_sim_6bot_naturallight_occlusion3,87.27,89.07,88.17,75.29,1598,233,196
+0.35,random_sim_6bot_naturallight_occlusion4,92.66,88.89,90.74,72.1,1616,128,202
+0.35,straight_line_6bots,99.19,99.88,99.54,78.94,857,7,1
+0.35,TOTAL,69.13,64.14,66.54,70.32,8226,3674,4599

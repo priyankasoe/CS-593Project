@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="920" viewBox="0 0 1600 920">
+  <defs>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #18212f; }
+      .subtitle { font: 400 18px Arial, sans-serif; fill: #4b5565; }
+      .lane-title { font: 700 22px Arial, sans-serif; fill: #101828; }
+      .lane-subtitle { font: 400 14px Arial, sans-serif; fill: #475467; }
+      .step-title { font: 700 16px Arial, sans-serif; fill: #111827; }
+      .step-text { font: 400 13px Arial, sans-serif; fill: #475467; }
+      .small { font: 400 12px Arial, sans-serif; fill: #667085; }
+      .label { font: 700 12px Arial, sans-serif; fill: #344054; }
+      .common { fill: #eef6ff; stroke: #2f80ed; stroke-width: 2; }
+      .centroid { fill: #f0fdf4; stroke: #16a34a; stroke-width: 2; }
+      .sort { fill: #fff7ed; stroke: #f97316; stroke-width: 2; }
+      .lite { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 2; }
+      .real { fill: #ecfeff; stroke: #0891b2; stroke-width: 2; }
+      .box { fill: #ffffff; stroke: #d0d5dd; stroke-width: 1.5; }
+      .arrow { stroke: #667085; stroke-width: 2.2; fill: none; marker-end: url(#arrowhead); }
+      .lane-bg { fill: #fbfcfe; stroke: #e4e7ec; stroke-width: 1.5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#667085"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1600" height="920" fill="#ffffff"/>
+
+  <text x="800" y="52" text-anchor="middle" class="title">Tracking Algorithm Comparison</text>
+  <text x="800" y="83" text-anchor="middle" class="subtitle">All methods start from the same YOLO robot detections and output MOT-style tracks with persistent IDs.</text>
+
+  <rect x="430" y="118" width="740" height="86" rx="12" class="common"/>
+  <text x="800" y="150" text-anchor="middle" class="lane-title">Shared Input</text>
+  <text x="800" y="176" text-anchor="middle" class="subtitle">frame, x1, y1, x2, y2, confidence, class</text>
+  <text x="800" y="194" text-anchor="middle" class="small">from outputs/detections/yolo*.txt</text>
+
+  <!-- Lane backgrounds -->
+  <rect x="52" y="250" width="350" height="585" rx="14" class="lane-bg"/>
+  <rect x="432" y="250" width="350" height="585" rx="14" class="lane-bg"/>
+  <rect x="812" y="250" width="350" height="585" rx="14" class="lane-bg"/>
+  <rect x="1192" y="250" width="350" height="585" rx="14" class="lane-bg"/>
+
+  <!-- Lane headers -->
+  <rect x="82" y="280" width="290" height="72" rx="10" class="centroid"/>
+  <text x="227" y="309" text-anchor="middle" class="lane-title">Centroid Tracker</text>
+  <text x="227" y="333" text-anchor="middle" class="lane-subtitle">nearest-center baseline</text>
+
+  <rect x="462" y="280" width="290" height="72" rx="10" class="sort"/>
+  <text x="607" y="309" text-anchor="middle" class="lane-title">SORT</text>
+  <text x="607" y="333" text-anchor="middle" class="lane-subtitle">motion prediction + IoU</text>
+
+  <rect x="842" y="280" width="290" height="72" rx="10" class="lite"/>
+  <text x="987" y="309" text-anchor="middle" class="lane-title">DeepSORT-lite</text>
+  <text x="987" y="333" text-anchor="middle" class="lane-subtitle">SORT + simple appearance</text>
+
+  <rect x="1222" y="280" width="290" height="72" rx="10" class="real"/>
+  <text x="1367" y="309" text-anchor="middle" class="lane-title">Real DeepSORT</text>
+  <text x="1367" y="333" text-anchor="middle" class="lane-subtitle">SORT + neural embeddings</text>
+
+  <!-- Input arrows -->
+  <path d="M800 204 C800 225, 227 225, 227 270" class="arrow"/>
+  <path d="M800 204 C800 225, 607 225, 607 270" class="arrow"/>
+  <path d="M800 204 C800 225, 987 225, 987 270" class="arrow"/>
+  <path d="M800 204 C800 225, 1367 225, 1367 270" class="arrow"/>
+
+  <!-- Centroid steps -->
+  <rect x="92" y="385" width="270" height="78" rx="8" class="box"/>
+  <text x="227" y="412" text-anchor="middle" class="step-title">1. Compute Centers</text>
+  <text x="227" y="436" text-anchor="middle" class="step-text">Convert each box to a center point</text>
+  <path d="M227 463 L227 493" class="arrow"/>
+
+  <rect x="92" y="500" width="270" height="88" rx="8" class="box"/>
+  <text x="227" y="527" text-anchor="middle" class="step-title">2. Match by Distance</text>
+  <text x="227" y="551" text-anchor="middle" class="step-text">Hungarian assignment using Euclidean</text>
+  <text x="227" y="571" text-anchor="middle" class="step-text">distance between old/new centers</text>
+  <path d="M227 588 L227 618" class="arrow"/>
+
+  <rect x="92" y="625" width="270" height="92" rx="8" class="box"/>
+  <text x="227" y="652" text-anchor="middle" class="step-title">3. Manage Tracks</text>
+  <text x="227" y="676" text-anchor="middle" class="step-text">Keep matched IDs, create new IDs,</text>
+  <text x="227" y="696" text-anchor="middle" class="step-text">remove tracks after missing frames</text>
+  <path d="M227 717 L227 747" class="arrow"/>
+
+  <rect x="92" y="754" width="270" height="52" rx="8" class="centroid"/>
+  <text x="227" y="786" text-anchor="middle" class="step-title">MOT-style track IDs</text>
+
+  <!-- SORT steps -->
+  <rect x="472" y="385" width="270" height="78" rx="8" class="box"/>
+  <text x="607" y="412" text-anchor="middle" class="step-title">1. Predict Motion</text>
+  <text x="607" y="436" text-anchor="middle" class="step-text">Kalman filter predicts next box</text>
+  <path d="M607 463 L607 493" class="arrow"/>
+
+  <rect x="472" y="500" width="270" height="88" rx="8" class="box"/>
+  <text x="607" y="527" text-anchor="middle" class="step-title">2. Match by IoU</text>
+  <text x="607" y="551" text-anchor="middle" class="step-text">Compare predicted boxes to YOLO</text>
+  <text x="607" y="571" text-anchor="middle" class="step-text">boxes using overlap</text>
+  <path d="M607 588 L607 618" class="arrow"/>
+
+  <rect x="472" y="625" width="270" height="92" rx="8" class="box"/>
+  <text x="607" y="652" text-anchor="middle" class="step-title">3. Update Lifecycle</text>
+  <text x="607" y="676" text-anchor="middle" class="step-text">Update matched Kalman states,</text>
+  <text x="607" y="696" text-anchor="middle" class="step-text">age unmatched tracks</text>
+  <path d="M607 717 L607 747" class="arrow"/>
+
+  <rect x="472" y="754" width="270" height="52" rx="8" class="sort"/>
+  <text x="607" y="786" text-anchor="middle" class="step-title">Motion-aware track IDs</text>
+
+  <!-- DeepSORT-lite steps -->
+  <rect x="852" y="385" width="270" height="78" rx="8" class="box"/>
+  <text x="987" y="412" text-anchor="middle" class="step-title">1. Predict Motion</text>
+  <text x="987" y="436" text-anchor="middle" class="step-text">Same Kalman box prediction as SORT</text>
+  <path d="M987 463 L987 493" class="arrow"/>
+
+  <rect x="852" y="500" width="270" height="88" rx="8" class="box"/>
+  <text x="987" y="527" text-anchor="middle" class="step-title">2. Extract Appearance</text>
+  <text x="987" y="551" text-anchor="middle" class="step-text">Crop each robot and compute HSV</text>
+  <text x="987" y="571" text-anchor="middle" class="step-text">color histogram</text>
+  <path d="M987 588 L987 618" class="arrow"/>
+
+  <rect x="852" y="625" width="270" height="92" rx="8" class="box"/>
+  <text x="987" y="652" text-anchor="middle" class="step-title">3. Combined Matching</text>
+  <text x="987" y="676" text-anchor="middle" class="step-text">Hungarian assignment using IoU</text>
+  <text x="987" y="696" text-anchor="middle" class="step-text">plus color-histogram distance</text>
+  <path d="M987 717 L987 747" class="arrow"/>
+
+  <rect x="852" y="754" width="270" height="52" rx="8" class="lite"/>
+  <text x="987" y="786" text-anchor="middle" class="step-title">Appearance-lite track IDs</text>
+
+  <!-- Real DeepSORT steps -->
+  <rect x="1232" y="385" width="270" height="78" rx="8" class="box"/>
+  <text x="1367" y="412" text-anchor="middle" class="step-title">1. Predict Motion</text>
+  <text x="1367" y="436" text-anchor="middle" class="step-text">Kalman filter maintains track state</text>
+  <path d="M1367 463 L1367 493" class="arrow"/>
+
+  <rect x="1232" y="500" width="270" height="88" rx="8" class="box"/>
+  <text x="1367" y="527" text-anchor="middle" class="step-title">2. Neural Embeddings</text>
+  <text x="1367" y="551" text-anchor="middle" class="step-text">Deep embedder converts robot crops</text>
+  <text x="1367" y="571" text-anchor="middle" class="step-text">into appearance vectors</text>
+  <path d="M1367 588 L1367 618" class="arrow"/>
+
+  <rect x="1232" y="625" width="270" height="92" rx="8" class="box"/>
+  <text x="1367" y="652" text-anchor="middle" class="step-title">3. Deep Association</text>
+  <text x="1367" y="676" text-anchor="middle" class="step-text">Matches detections using motion, IoU,</text>
+  <text x="1367" y="696" text-anchor="middle" class="step-text">and cosine embedding distance</text>
+  <path d="M1367 717 L1367 747" class="arrow"/>
+
+  <rect x="1232" y="754" width="270" height="52" rx="8" class="real"/>
+  <text x="1367" y="786" text-anchor="middle" class="step-title">Embedding-based track IDs</text>
+
+  <!-- Bottom legend -->
+  <rect x="150" y="858" width="1300" height="38" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
+  <text x="800" y="883" text-anchor="middle" class="small">
+    Key difference: centroid uses position only; SORT adds motion prediction; DeepSORT-lite adds simple color appearance; real DeepSORT adds learned neural appearance embeddings.
+  </text>
+</svg>

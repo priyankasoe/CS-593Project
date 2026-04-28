@@ -1,0 +1,6 @@
+video_id,video_label,tracker_run,precision_pct,recall_pct,f1_pct,mota_pct,motp_iou_pct,id_switches,false_positives,false_negatives
+straight_line_6bots,Straight line 6 robots,Centroid conf=0.25,97.83,100.0,98.9,96.5,78.94,11,19,0
+straight_line_6bots,Straight line 6 robots,Centroid conf=0.35,99.19,99.88,99.54,98.14,78.94,8,7,1
+straight_line_6bots,Straight line 6 robots,SORT conf=0.25,97.83,100.0,98.9,96.5,78.94,11,19,0
+straight_line_6bots,Straight line 6 robots,DeepSORT-lite conf=0.25,97.83,100.0,98.9,96.15,78.94,14,19,0
+straight_line_6bots,Straight line 6 robots,DeepSORT-lite conf=0.35,99.19,99.88,99.54,97.67,78.94,12,7,1

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg { fill: #f7f8fb; }
+      .title { font: 700 54px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 26px Arial, sans-serif; fill: #4b5563; }
+      .header { font: 700 30px Arial, sans-serif; fill: #111827; }
+      .small { font: 400 23px Arial, sans-serif; fill: #374151; }
+      .tiny { font: 400 19px Arial, sans-serif; fill: #6b7280; }
+      .panel { fill: #ffffff; stroke: #d1d5db; stroke-width: 3; rx: 14; }
+      .done { fill: #e8f7ef; stroke: #2f9e64; stroke-width: 3; rx: 14; }
+      .progress { fill: #eaf2ff; stroke: #2b6cb0; stroke-width: 3; rx: 14; }
+      .left { fill: #fff4de; stroke: #d99012; stroke-width: 3; rx: 14; }
+      .check { fill: #2f9e64; }
+      .dot { fill: #2b6cb0; }
+      .warn { fill: #d99012; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="92">Project Status for Presentation</text>
+  <text class="subtitle" x="82" y="135">A clear separation between completed implementation, current analysis, and the remaining marker branch.</text>
+
+  <rect class="panel done" x="100" y="210" width="430" height="500"/>
+  <text class="header" x="145" y="270">Implemented</text>
+  <circle class="check" cx="155" cy="335" r="12"/><text class="small" x="185" y="343">metadata-driven dataset builder</text>
+  <circle class="check" cx="155" cy="395" r="12"/><text class="small" x="185" y="403">YOLO train / predict wrappers</text>
+  <circle class="check" cx="155" cy="455" r="12"/><text class="small" x="185" y="463">detection export format</text>
+  <circle class="check" cx="155" cy="515" r="12"/><text class="small" x="185" y="523">centroid tracker</text>
+  <circle class="check" cx="155" cy="575" r="12"/><text class="small" x="185" y="583">SORT tracker</text>
+  <circle class="check" cx="155" cy="635" r="12"/><text class="small" x="185" y="643">DeepSORT-lite tracker</text>
+
+  <rect class="panel progress" x="585" y="210" width="430" height="500"/>
+  <text class="header" x="630" y="270">Current Analysis</text>
+  <circle class="dot" cx="640" cy="335" r="12"/><text class="small" x="670" y="343">YOLO detection metrics</text>
+  <circle class="dot" cx="640" cy="395" r="12"/><text class="small" x="670" y="403">MOT-style track metrics</text>
+  <circle class="dot" cx="640" cy="455" r="12"/><text class="small" x="670" y="463">ID switch comparison</text>
+  <circle class="dot" cx="640" cy="515" r="12"/><text class="small" x="670" y="523">occlusion/dark-light stress cases</text>
+  <circle class="dot" cx="640" cy="575" r="12"/><text class="small" x="670" y="583">visual track overlays</text>
+  <text class="tiny" x="630" y="655">Metrics should be rerun after final 25-epoch model.</text>
+
+  <rect class="panel left" x="1070" y="210" width="430" height="500"/>
+  <text class="header" x="1115" y="270">Remaining</text>
+  <circle class="warn" cx="1125" cy="335" r="12"/><text class="small" x="1155" y="343">AprilTag detection integration</text>
+  <circle class="warn" cx="1125" cy="395" r="12"/><text class="small" x="1155" y="403">marker-visible quantitative data</text>
+  <circle class="warn" cx="1125" cy="455" r="12"/><text class="small" x="1155" y="463">same detection export format</text>
+  <circle class="warn" cx="1125" cy="515" r="12"/><text class="small" x="1155" y="523">fair YOLO vs marker comparison</text>
+  <text class="tiny" x="1115" y="655">Current marker evidence is qualitative only.</text>
+
+  <rect class="panel" x="210" y="775" width="1180" height="70"/>
+  <text class="small" x="250" y="819">Suggested spoken framing: the learning-based path is built end-to-end; the marker branch is the main remaining comparison item.</text>
+</svg>

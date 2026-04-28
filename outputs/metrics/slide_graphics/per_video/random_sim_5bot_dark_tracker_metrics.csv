@@ -1,0 +1,6 @@
+video_id,video_label,tracker_run,precision_pct,recall_pct,f1_pct,mota_pct,motp_iou_pct,id_switches,false_positives,false_negatives
+random_sim_5bot_dark,Dark random 5 robots,Centroid conf=0.25,55.29,52.15,53.67,9.38,65.71,50,3523,3998
+random_sim_5bot_dark,Dark random 5 robots,Centroid conf=0.35,55.69,49.73,52.54,9.72,65.94,37,3306,4200
+random_sim_5bot_dark,Dark random 5 robots,SORT conf=0.25,55.29,52.15,53.67,9.41,65.71,48,3523,3998
+random_sim_5bot_dark,Dark random 5 robots,DeepSORT-lite conf=0.25,55.29,52.15,53.67,9.43,65.71,46,3523,3998
+random_sim_5bot_dark,Dark random 5 robots,DeepSORT-lite conf=0.35,55.69,49.73,52.54,9.79,65.94,31,3306,4200

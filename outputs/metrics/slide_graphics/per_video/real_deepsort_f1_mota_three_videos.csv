@@ -1,0 +1,4 @@
+video_id,tracker,confidence,f1_percent,mota_percent
+straight_line_6bots,Real DeepSORT,0.35,99.3579,98.3683
+random_sim_5bot_dark,Real DeepSORT,0.35,52.3710,9.8743
+random_sim_6bot_naturallight_occlusion3,Real DeepSORT,0.35,87.8401,74.9164

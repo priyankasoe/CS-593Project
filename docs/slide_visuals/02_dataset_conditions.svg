@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg { fill: #fbfbf8; }
+      .title { font: 700 54px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 26px Arial, sans-serif; fill: #4b5563; }
+      .big { font: 700 70px Arial, sans-serif; fill: #111827; }
+      .label { font: 700 28px Arial, sans-serif; fill: #111827; }
+      .small { font: 400 23px Arial, sans-serif; fill: #374151; }
+      .tiny { font: 400 18px Arial, sans-serif; fill: #6b7280; }
+      .panel { fill: #ffffff; stroke: #d6d3d1; stroke-width: 3; rx: 14; }
+      .train { fill: #2f9e64; }
+      .val { fill: #2b6cb0; }
+      .test { fill: #d99012; }
+      .chip { fill: #eef2f7; stroke: #cbd5e1; stroke-width: 2; rx: 20; }
+      .warn { fill: #fff7ed; stroke: #f97316; stroke-width: 3; rx: 14; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="92">Annotated Dataset Coverage</text>
+  <text class="subtitle" x="82" y="135">10 videos converted into a YOLO dataset, with MOT labels preserved for tracking evaluation.</text>
+
+  <rect class="panel" x="85" y="195" width="410" height="235"/>
+  <text class="big" x="130" y="300">10</text>
+  <text class="label" x="130" y="350">annotated videos</text>
+  <text class="small" x="130" y="388">CVAT YOLO + MOT exports</text>
+
+  <rect class="panel" x="595" y="195" width="410" height="235"/>
+  <text class="big" x="640" y="300">7,765</text>
+  <text class="label" x="640" y="350">labeled frames</text>
+  <text class="small" x="640" y="388">train + val + test images</text>
+
+  <rect class="panel" x="1105" y="195" width="410" height="235"/>
+  <text class="big" x="1150" y="300">3-6</text>
+  <text class="label" x="1150" y="350">robots per video</text>
+  <text class="small" x="1150" y="388">identical Sphero BOLTs</text>
+
+  <rect class="panel" x="85" y="505" width="1430" height="160"/>
+  <text class="label" x="125" y="555">YOLO Split</text>
+  <rect class="train" x="125" y="590" width="977" height="45"/>
+  <rect class="val" x="1102" y="590" width="82" height="45"/>
+  <rect class="test" x="1184" y="590" width="331" height="45"/>
+  <text class="small" x="125" y="675">Train: 5,349</text>
+  <text class="small" x="545" y="675">Val: 446</text>
+  <text class="small" x="885" y="675">Test: 1,970</text>
+
+  <rect class="chip" x="115" y="725" width="205" height="54"/>
+  <text class="small" x="145" y="760">straight-line</text>
+  <rect class="chip" x="345" y="725" width="190" height="54"/>
+  <text class="small" x="377" y="760">random</text>
+  <rect class="chip" x="560" y="725" width="240" height="54"/>
+  <text class="small" x="590" y="760">stationary robot</text>
+  <rect class="chip" x="825" y="725" width="170" height="54"/>
+  <text class="small" x="860" y="760">dark</text>
+  <rect class="chip" x="1020" y="725" width="235" height="54"/>
+  <text class="small" x="1050" y="760">natural light</text>
+  <rect class="chip" x="1280" y="725" width="205" height="54"/>
+  <text class="small" x="1310" y="760">occlusion</text>
+
+  <rect class="warn" x="365" y="805" width="870" height="52"/>
+  <text class="tiny" x="395" y="838">Caveat: random_sim_5bot_dark is partially annotated; later empty labels are excluded from training/evaluation.</text>
+</svg>

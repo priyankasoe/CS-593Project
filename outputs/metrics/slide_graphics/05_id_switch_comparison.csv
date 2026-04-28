@@ -1,0 +1,6 @@
+method_or_run,total_id_switches,random_sim_5bot_dark,occlusion3,occlusion4,straight_line_6bots
+Centroid conf=0.25,112,50,33,18,11
+Centroid conf=0.35,90,37,30,15,8
+SORT conf=0.25,103,48,27,17,11
+DeepSORT-lite conf=0.25,105,46,28,17,14
+DeepSORT-lite conf=0.35,83,31,25,15,12

@@ -1,0 +1,10 @@
+video_id,tracker,confidence,f1_percent,mota_percent
+straight_line_6bots,Centroid,0.35,99.5354,98.1352
+straight_line_6bots,SORT,0.35,99.5354,98.2517
+straight_line_6bots,Real DeepSORT,0.35,99.3579,98.3683
+random_sim_5bot_dark,Centroid,0.35,52.5417,9.7187
+random_sim_5bot_dark,SORT,0.35,52.5417,9.7546
+random_sim_5bot_dark,Real DeepSORT,0.35,52.3710,9.8743
+random_sim_6bot_naturallight_occlusion3,Centroid,0.35,88.1655,74.4147
+random_sim_6bot_naturallight_occlusion3,SORT,0.35,88.1655,74.7492
+random_sim_6bot_naturallight_occlusion3,Real DeepSORT,0.35,87.8401,74.9164

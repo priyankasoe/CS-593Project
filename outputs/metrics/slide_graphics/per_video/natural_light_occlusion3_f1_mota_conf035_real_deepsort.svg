@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="500" viewBox="0 0 920 500">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,sans-serif}.title{font-size:24px;font-weight:700;fill:#222}.axis{font-size:13px;fill:#555}.legend{font-size:14px;fill:#444}.value{font-size:12px;font-weight:700;fill:#555}.grid{stroke:#e8e8e8;stroke-width:1}.axisline{stroke:#999;stroke-width:1.5}</style>
+<text x="460.0" y="34" text-anchor="middle" class="title">Natural Light Occlusion 3: F1 vs MOTA</text>
+<rect x="82" y="52" width="15" height="15" fill="#5b7daa"/>
+<text x="104" y="65" class="legend">F1 (%)</text>
+<rect x="217" y="52" width="15" height="15" fill="#6da35a"/>
+<text x="239" y="65" class="legend">MOTA (%)</text>
+<line x1="82" y1="414.0" x2="892" y2="414.0" class="grid"/>
+<text x="72" y="418.0" text-anchor="end" class="axis">0</text>
+<line x1="82" y1="346.8" x2="892" y2="346.8" class="grid"/>
+<text x="72" y="350.8" text-anchor="end" class="axis">20</text>
+<line x1="82" y1="279.6" x2="892" y2="279.6" class="grid"/>
+<text x="72" y="283.6" text-anchor="end" class="axis">40</text>
+<line x1="82" y1="212.4" x2="892" y2="212.4" class="grid"/>
+<text x="72" y="216.4" text-anchor="end" class="axis">60</text>
+<line x1="82" y1="145.2" x2="892" y2="145.2" class="grid"/>
+<text x="72" y="149.2" text-anchor="end" class="axis">80</text>
+<line x1="82" y1="78.0" x2="892" y2="78.0" class="grid"/>
+<text x="72" y="82.0" text-anchor="end" class="axis">100</text>
+<line x1="82" y1="78" x2="82" y2="414" class="axisline"/>
+<line x1="82" y1="414" x2="892" y2="414" class="axisline"/>
+<rect x="165.0" y="117.8" width="46" height="296.2" fill="#5b7daa"/>
+<text x="188.0" y="111.8" text-anchor="middle" class="value">88.2</text>
+<rect x="223.0" y="164.0" width="46" height="250.0" fill="#6da35a"/>
+<text x="246.0" y="158.0" text-anchor="middle" class="value">74.4</text>
+<text x="217.0" y="442" text-anchor="middle" class="axis">Centroid</text>
+<text x="217.0" y="490" text-anchor="middle" class="axis">conf 0.35</text>
+<rect x="435.0" y="117.8" width="46" height="296.2" fill="#5b7daa"/>
+<text x="458.0" y="111.8" text-anchor="middle" class="value">88.2</text>
+<rect x="493.0" y="162.8" width="46" height="251.2" fill="#6da35a"/>
+<text x="516.0" y="156.8" text-anchor="middle" class="value">74.7</text>
+<text x="487.0" y="442" text-anchor="middle" class="axis">SORT</text>
+<text x="487.0" y="490" text-anchor="middle" class="axis">conf 0.35</text>
+<rect x="705.0" y="118.9" width="46" height="295.1" fill="#5b7daa"/>
+<text x="728.0" y="112.9" text-anchor="middle" class="value">87.8</text>
+<rect x="763.0" y="162.3" width="46" height="251.7" fill="#6da35a"/>
+<text x="786.0" y="156.3" text-anchor="middle" class="value">74.9</text>
+<text x="757.0" y="442" text-anchor="middle" class="axis">Real</text>
+<text x="757.0" y="458" text-anchor="middle" class="axis">DeepSORT</text>
+<text x="757.0" y="490" text-anchor="middle" class="axis">conf 0.35</text>
+</svg>

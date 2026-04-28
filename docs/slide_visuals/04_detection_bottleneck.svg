@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg { fill: #f9fafb; }
+      .title { font: 700 54px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 400 26px Arial, sans-serif; fill: #4b5563; }
+      .label { font: 700 27px Arial, sans-serif; fill: #111827; }
+      .small { font: 400 22px Arial, sans-serif; fill: #374151; }
+      .tiny { font: 400 18px Arial, sans-serif; fill: #6b7280; }
+      .box { fill: #ffffff; stroke: #d1d5db; stroke-width: 3; rx: 14; }
+      .easy { fill: #e8f7ef; stroke: #2f9e64; }
+      .mid { fill: #eaf2ff; stroke: #2b6cb0; }
+      .hard { fill: #fff1e6; stroke: #f97316; }
+      .barbg { fill: #e5e7eb; }
+      .bar { fill: #2b6cb0; }
+      .barhard { fill: #d99012; }
+      .bargood { fill: #2f9e64; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1600" height="900"/>
+  <text class="title" x="80" y="92">Detection Quality Drives Tracking Quality</text>
+  <text class="subtitle" x="82" y="135">YOLO output quality varies strongly by test condition; tracker performance inherits those errors.</text>
+
+  <rect class="box easy" x="110" y="215" width="410" height="500"/>
+  <text class="label" x="150" y="270">Straight-line 6 robots</text>
+  <text class="small" x="150" y="310">Validation sequence</text>
+  <text class="small" x="150" y="370">Detection F1</text>
+  <rect class="barbg" x="150" y="395" width="310" height="38"/>
+  <rect class="bargood" x="150" y="395" width="303" height="38"/>
+  <text class="label" x="150" y="470">0.979</text>
+  <text class="small" x="150" y="535">Mean IoU</text>
+  <rect class="barbg" x="150" y="560" width="310" height="38"/>
+  <rect class="bargood" x="150" y="560" width="250" height="38"/>
+  <text class="label" x="150" y="635">0.805</text>
+
+  <rect class="box mid" x="595" y="215" width="410" height="500"/>
+  <text class="label" x="635" y="270">Natural-light occlusion</text>
+  <text class="small" x="635" y="310">Held-out test sequence</text>
+  <text class="small" x="635" y="370">Detection F1</text>
+  <rect class="barbg" x="635" y="395" width="310" height="38"/>
+  <rect class="bar" x="635" y="395" width="263" height="38"/>
+  <text class="label" x="635" y="470">0.849</text>
+  <text class="small" x="635" y="535">Mean IoU</text>
+  <rect class="barbg" x="635" y="560" width="310" height="38"/>
+  <rect class="bar" x="635" y="560" width="231" height="38"/>
+  <text class="label" x="635" y="635">0.747</text>
+
+  <rect class="box hard" x="1080" y="215" width="410" height="500"/>
+  <text class="label" x="1120" y="270">Dark 5-robot video</text>
+  <text class="small" x="1120" y="310">Partial annotation window</text>
+  <text class="small" x="1120" y="370">Detection F1</text>
+  <rect class="barbg" x="1120" y="395" width="310" height="38"/>
+  <rect class="barhard" x="1120" y="395" width="215" height="38"/>
+  <text class="label" x="1120" y="470">0.692</text>
+  <text class="small" x="1120" y="535">Mean IoU</text>
+  <rect class="barbg" x="1120" y="560" width="310" height="38"/>
+  <rect class="barhard" x="1120" y="560" width="208" height="38"/>
+  <text class="label" x="1120" y="635">0.672</text>
+
+  <rect class="box" x="220" y="775" width="1160" height="70"/>
+  <text class="small" x="260" y="819">Slide takeaway: improvements to detector recall/false positives should improve all downstream trackers.</text>
+</svg>

@@ -1,0 +1,13 @@
+video_id,method,f1_pct,mota_pct,id_switches,precision_pct,recall_pct
+random_sim_5bot_dark,Centroid,53.67,9.38,50,55.29,52.15
+random_sim_6bot_naturallight_occlusion3,Centroid,87.16,71.79,33,84.97,89.46
+random_sim_6bot_naturallight_occlusion4,Centroid,89.86,78.44,18,88.57,91.2
+straight_line_6bots,Centroid,98.9,96.5,11,97.83,100.0
+random_sim_5bot_dark,SORT,53.67,9.41,48,55.29,52.15
+random_sim_6bot_naturallight_occlusion3,SORT,87.16,72.13,27,84.97,89.46
+random_sim_6bot_naturallight_occlusion4,SORT,89.86,78.49,17,88.57,91.2
+straight_line_6bots,SORT,98.9,96.5,11,97.83,100.0
+random_sim_5bot_dark,DeepSORT-lite,53.67,9.43,46,55.29,52.15
+random_sim_6bot_naturallight_occlusion3,DeepSORT-lite,87.16,72.07,28,84.97,89.46
+random_sim_6bot_naturallight_occlusion4,DeepSORT-lite,89.86,78.49,17,88.57,91.2
+straight_line_6bots,DeepSORT-lite,98.9,96.15,14,97.83,100.0

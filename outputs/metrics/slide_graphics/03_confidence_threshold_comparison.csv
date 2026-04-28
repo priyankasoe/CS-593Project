@@ -1,0 +1,5 @@
+method,confidence_threshold,precision_pct,recall_pct,f1_pct,mota_pct,id_switches,false_positives,false_negatives
+Centroid,0.25,67.73,66.11,66.91,33.73,112,4040,4347
+Centroid,0.35,69.13,64.14,66.54,34.79,90,3674,4599
+DeepSORT-lite,0.25,67.73,66.11,66.91,33.79,105,4040,4347
+DeepSORT-lite,0.35,69.13,64.14,66.54,34.85,83,3674,4599

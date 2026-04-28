@@ -1,0 +1,13 @@
+video_id,tracker,id_switches
+straight_line_6bots,Centroid,8
+straight_line_6bots,SORT,7
+straight_line_6bots,DeepSORT-lite,12
+straight_line_6bots,Real DeepSORT,3
+random_sim_6bot_naturallight_occlusion3,Centroid,30
+random_sim_6bot_naturallight_occlusion3,SORT,24
+random_sim_6bot_naturallight_occlusion3,DeepSORT-lite,25
+random_sim_6bot_naturallight_occlusion3,Real DeepSORT,12
+random_sim_6bot_naturallight_occlusion4,Centroid,15
+random_sim_6bot_naturallight_occlusion4,SORT,16
+random_sim_6bot_naturallight_occlusion4,DeepSORT-lite,15
+random_sim_6bot_naturallight_occlusion4,Real DeepSORT,12

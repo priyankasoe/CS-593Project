@@ -1,0 +1,6 @@
+video_id,video_label,tracker_run,precision_pct,recall_pct,f1_pct,mota_pct,motp_iou_pct,id_switches,false_positives,false_negatives
+random_sim_6bot_naturallight_occlusion3,Natural light occlusion 3,Centroid conf=0.25,84.97,89.46,87.16,71.79,75.45,33,284,189
+random_sim_6bot_naturallight_occlusion3,Natural light occlusion 3,Centroid conf=0.35,87.27,89.07,88.17,74.41,75.29,30,233,196
+random_sim_6bot_naturallight_occlusion3,Natural light occlusion 3,SORT conf=0.25,84.97,89.46,87.16,72.13,75.45,27,284,189
+random_sim_6bot_naturallight_occlusion3,Natural light occlusion 3,DeepSORT-lite conf=0.25,84.97,89.46,87.16,72.07,75.45,28,284,189
+random_sim_6bot_naturallight_occlusion3,Natural light occlusion 3,DeepSORT-lite conf=0.35,87.27,89.07,88.17,74.69,75.29,25,233,196

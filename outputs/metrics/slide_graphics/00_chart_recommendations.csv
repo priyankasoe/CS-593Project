@@ -1,0 +1,6 @@
+file,recommended_chart,slide_message
+01_overall_tracker_comparison.csv,Grouped bar chart,Overall tracking quality is similar across methods because all consume the same YOLO detections; ID switches separate the trackers.
+02_default_methods_summary.csv,"Combo chart: bars for F1/MOTA, line for ID switches",SORT slightly reduces ID switches compared with centroid at the default confidence threshold.
+03_confidence_threshold_comparison.csv,Grouped bar chart,Raising confidence from 0.25 to 0.35 improves precision and ID stability but reduces recall.
+04_per_video_default_f1_mota.csv,Grouped bar chart by video,Performance is strongest on straight-line motion and weaker on dark/occluded random motion.
+05_id_switch_comparison.csv,Bar chart,ID switches quantify identity stability during crossings and occlusions.
