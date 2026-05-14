@@ -1,0 +1,9 @@
+video_id,tracker,id_switches
+random_sim_5bot_dark,Centroid,37
+random_sim_6bot_naturallight_occlusion4,Centroid,15
+random_sim_5bot_dark,SORT,34
+random_sim_6bot_naturallight_occlusion4,SORT,16
+random_sim_5bot_dark,DeepSORT-lite,31
+random_sim_6bot_naturallight_occlusion4,DeepSORT-lite,15
+random_sim_5bot_dark,Real DeepSORT,27
+random_sim_6bot_naturallight_occlusion4,Real DeepSORT,12

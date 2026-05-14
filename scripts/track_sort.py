@@ -182,6 +182,7 @@ def assign_detections(
     if not tracks or not detections:
         return [], set(range(len(tracks))), set(range(len(detections)))
 
+    # tracks are the current 
     cost_matrix = [
         [-iou(track.predicted_box, detection.xyxy) for detection in detections]
         for track in tracks
@@ -221,9 +222,12 @@ def run_sort(
 
     for frame in range(first_frame, last_frame + 1):
         detections = detections_by_frame.get(frame, [])
+
+        # stage 1 -  kalman prediction returns predicted box 
         for track in tracks:
             track.predict()
 
+        # stage 2 - assigns detections to the tracks 
         matches, _unmatched_tracks, unmatched_detections = assign_detections(
             tracks,
             detections,

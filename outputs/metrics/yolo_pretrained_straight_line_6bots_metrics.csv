@@ -1,0 +1,3 @@
+video_id,frames,tp,fp,fn,precision,recall,f1,mean_iou
+straight_line_6bots,143,0,0,858,0.0,0.0,0.0,0.0
+TOTAL,,0,0,858,0.0,0.0,0.0,0.0

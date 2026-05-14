@@ -86,14 +86,21 @@ def evaluate_video(
     id_switches = 0
     ious: list[float] = []
     gt_count = 0
+
+    # dict to store gt_ idx, prev index it was assigned to 
     previous_matches: dict[int, int] = {}
 
+    # same as detection, get frames 
     frames = sorted(set(gt_by_frame) | set(pred_by_frame))
+
     for frame in frames:
+
+        # get objects gt and detected per frame 
         gt_objects = gt_by_frame.get(frame, [])
         pred_objects = pred_by_frame.get(frame, [])
         gt_count += len(gt_objects)
 
+        # handle no detections in both cases 
         if not gt_objects:
             false_positive += len(pred_objects)
             continue
@@ -101,6 +108,7 @@ def evaluate_video(
             false_negative += len(gt_objects)
             continue
 
+        # compute cost matrix to determine matches and solve 
         cost_matrix = [
             [-iou(gt_box, pred_box) for _pred_id, pred_box in pred_objects]
             for _gt_id, gt_box in gt_objects
@@ -113,9 +121,15 @@ def evaluate_video(
 
         for gt_index, pred_index in zip(gt_indices, pred_indices):
             overlap = -cost_matrix[gt_index][pred_index]
+
+            # stage 1: check iou threshold 
             if overlap < iou_threshold:
                 continue
 
+            # now we have matched, but have to check if id lines up 
+            # this still counts as a match 
+
+            # stage 2: check id 
             gt_id = gt_objects[gt_index][0]
             pred_id = pred_objects[pred_index][0]
             previous_pred_id = previous_matches.get(gt_id)
@@ -131,6 +145,7 @@ def evaluate_video(
         false_negative += len(gt_objects) - len(matched_gt_indices)
         false_positive += len(pred_objects) - len(matched_pred_indices)
 
+        # update previous matches 
         for gt_id, pred_id in current_matches.items():
             previous_matches[gt_id] = pred_id
 

@@ -104,34 +104,53 @@ def evaluate_video(
     false_negative = 0
     matched_ious: list[float] = []
 
+    # extract frames 
     frames = sorted(set(gt_by_frame) | set(det_by_frame))
     for frame in frames:
+
+         # set of bounding boxes of ground truth vs. detections
+
         gt_boxes = gt_by_frame.get(frame, [])
         detections = det_by_frame.get(frame, [])
         det_boxes = [box for box, _confidence in detections]
 
-        if not gt_boxes:
+        if not gt_boxes:   # no boxes in gt but boxes in detected -> false positive for all boxes detected 
             false_positive += len(det_boxes)
             continue
-        if not det_boxes:
+        if not det_boxes:   # boxes in gt but no boxes in detected -> false negative for all boxes not detected 
             false_negative += len(gt_boxes)
             continue
 
+        # compute cost matrix (iou of all pairs of possible box matches)
         cost_matrix = [
             [-iou(gt_box, det_box) for det_box in det_boxes]
             for gt_box in gt_boxes
         ]
+
+        # hungarian assignment 
+
+        # solve system 
         gt_indices, det_indices = linear_sum_assignment(cost_matrix)
 
         matched_gt = set()
         matched_det = set()
         for gt_index, det_index in zip(gt_indices, det_indices):
+
+            # get detections 
             overlap = -cost_matrix[gt_index][det_index]
+
+            # detection if greater than threshold of 0.5 
             if overlap >= iou_threshold:
                 true_positive += 1
                 matched_ious.append(overlap)
                 matched_gt.add(gt_index)
                 matched_det.add(det_index)
+
+        # calculate reminder 
+        # will always be postitive or 0 since there can't be more matched than boxes (we only match boxes) 
+
+        # false negative is when not enough boxes were detected (more gt boxes than matched)
+        # false positive is when too many boxes were detected (more detected than matched ) 
 
         false_negative += len(gt_boxes) - len(matched_gt)
         false_positive += len(det_boxes) - len(matched_det)
